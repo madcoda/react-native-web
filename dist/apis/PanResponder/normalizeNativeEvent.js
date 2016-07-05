@@ -91,7 +91,7 @@ function normalizeMouseEvent(nativeEvent) {
 function normalizeNativeEvent(nativeEvent, eventType) {
   if (!nativeEvent || !eventType) return normalizeTouchEvent(nativeEvent);
 
-  var mouse = nativeEvent.type.indexOf('mouse') >= 0;
+  var mouse = eventType.indexOf('mouse') >= 0;
   return mouse ? normalizeMouseEvent(nativeEvent) : normalizeTouchEvent(nativeEvent);
 }
 
